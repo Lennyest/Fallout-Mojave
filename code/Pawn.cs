@@ -74,6 +74,11 @@ public partial class Pawn : AnimatedEntity
 	[BindComponent] public PawnAnimator Animator { get; }
 
 
+	// Third Person camera distance.
+	private float CameraDistance { get; set; } = -25.0f;
+	private float CameraDistanceMax = -5.0f;
+	private float CameraDistanceMin = -30.0f;
+
 	public override Ray AimRay => new Ray( EyePosition, EyeRotation.Forward );
 
 	/// <summary>
@@ -161,7 +166,7 @@ public partial class Pawn : AnimatedEntity
 
 	public override void Simulate( IClient cl )
 	{
-		if (cl.Pawn == null || !cl.Pawn.IsValid) return;
+		if ( cl.Pawn == null || !cl.Pawn.IsValid ) return;
 
 		SimulateRotation();
 		Controller?.Simulate( cl );
@@ -170,7 +175,12 @@ public partial class Pawn : AnimatedEntity
 		ActiveWeapon?.Simulate( cl );
 		EyeLocalPosition = Vector3.Up * (64f * Scale);
 
-		
+
+		// Handles camera distance
+		CameraDistance = CameraDistance + Input.MouseWheel * -1;
+
+		Log.Info( CameraDistance );
+
 		if (Input.Pressed(InputButton.PrimaryAttack) && Game.IsServer )
 		{
 			Ragdoll?.Delete();
@@ -212,7 +222,7 @@ public partial class Pawn : AnimatedEntity
 		Camera.Rotation = ViewAngles.ToRotation(); // Rotation.Lerp( Camera.Rotation, ViewAngles.ToRotation(), Time.Delta * 50f );
 
 		if ( ThirdPerson )
-			Camera.Position = Vector3.Lerp( Camera.Position, headPos + cl.Pawn.Rotation.Forward * -40 + cl.Pawn.Rotation.Up * 18f, Time.Delta * 50f );
+			Camera.Position = Vector3.Lerp(Camera.Position, headPos + cl.Pawn.Rotation.Forward * CameraDistance + cl.Pawn.Rotation.Up * 10f + cl.Pawn.Rotation.Right * 10, Time.Delta * 25);
 		else
 			Camera.Position = headPos + ViewAngles.Forward * 2f;
 
