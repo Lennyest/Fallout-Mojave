@@ -1,0 +1,15 @@
+{
+  "Title": null,
+  "Subtitle": null,
+  "Category": "None",
+  "SubCategory": null,
+  "Parent": null,
+  "Model": null,
+  "SkinMaterial": null,
+  "EyesMaterial": null,
+  "MaterialGroup": null,
+  "SlotsUnder": 0,
+  "SlotsOver": 0,
+  "HideBody": 0,
+  "Icon": {}
+}

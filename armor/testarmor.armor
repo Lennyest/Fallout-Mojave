@@ -1,0 +1,13 @@
+{
+  "Name": "Commander Coat",
+  "Model": "models/fallout/human/clothing/enclavecoat/coat.vmdl",
+  "Description": "",
+  "DT": 0,
+  "BaseDurability": 0,
+  "DurabilityCost": 0,
+  "FootstepLeft": null,
+  "FootstepRight": null,
+  "Jump": null,
+  "Land": null,
+  "HidePart": "AllButHead"
+}

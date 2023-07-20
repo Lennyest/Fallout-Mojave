@@ -1,0 +1,13 @@
+{
+  "Name": "Veteran Ranger Armor",
+  "Model": "models/fallout/human/powerarmor/vetranger.vmdl",
+  "Description": "",
+  "DT": 0,
+  "BaseDurability": 0,
+  "DurabilityCost": 0,
+  "FootstepLeft": null,
+  "FootstepRight": null,
+  "Jump": null,
+  "Land": null,
+  "HidePart": "AllButHead"
+}
