@@ -852,14 +852,184 @@
 				children = 
 				[
 					{
-						_class = "IKRigBiped"
-						initial_master_blend_amount = 1.0
-						abs_origin_drop_height = 24.0
-						abs_origin_drop_height_spring_strength = 500.0
-						default_tilt_spring_strength = 5.0
-						tilt_bone = ""
-						animgraph_master_blend_parameter_name = ""
-						system = "IKSYSTEMTYPE_Animgraph"
+						_class = "IKChain"
+						name = "rhand"
+						children = 
+						[
+							{
+								_class = "IKChainJoint"
+								name = "Bip01_UpperArm_R"
+								children = 
+								[
+									{
+										_class = "IKChainJoint"
+										name = "Bip01_Forearm_R"
+										children = 
+										[
+											{
+												_class = "IKChainJoint"
+												name = "Bip01_Hand_R"
+												bone = "Bip01_Hand_R"
+											},
+										]
+										bone = "Bip01_Forearm_R"
+									},
+								]
+								bone = "Bip01_UpperArm_R"
+							},
+						]
+						m_bDoBonesOrientAlongPositiveX = true
+						"m_DefaultSolverSettings.m_nNumIterations" = 6
+						"m_DefaultSolverSettings.m_SolverType " = "IKSOLVER_TwoBone"
+						"m_DefaultTargetSettings.m_Bone" = 
+						{
+							m_Name = "Bip01_Hand_R"
+						}
+						"m_DefaultTargetSettings.m_TargetSource" = "Bone"
+						"m_Data.m_DefaultTargetSettings.m_AnimgraphParameterNamePosition" = 
+						{
+							m_id = 4294967295
+						}
+						"m_Data.m_EndEffectorFixedOffsetAttachment" = 
+						{
+							m_Name = ""
+						}
+						"m_Data.m_bParentJointRequiresAlignment" = true
+					},
+					{
+						_class = "IKChain"
+						name = "foot_r"
+						children = 
+						[
+							{
+								_class = "IKChainJoint"
+								name = "Bip01_Thigh_R"
+								children = 
+								[
+									{
+										_class = "IKChainJoint"
+										name = "Bip01_Calf_R"
+										children = 
+										[
+											{
+												_class = "IKChainJoint"
+												name = "Bip01_Foot_R"
+												bone = "Bip01_Foot_R"
+											},
+										]
+										bone = "Bip01_Calf_R"
+									},
+								]
+								bone = "Bip01_Thigh_R"
+							},
+						]
+						m_bDoBonesOrientAlongPositiveX = true
+						"m_DefaultSolverSettings.m_nNumIterations" = 6
+						"m_DefaultSolverSettings.m_SolverType " = "IKSOLVER_TwoBone"
+						"m_DefaultTargetSettings.m_Bone" = 
+						{
+							m_Name = "Bip01_Foot_R"
+						}
+						"m_DefaultTargetSettings.m_TargetSource" = "Bone"
+						"m_Data.m_DefaultTargetSettings.m_AnimgraphParameterNamePosition" = 
+						{
+							m_id = 4294967295
+						}
+						"m_Data.m_EndEffectorFixedOffsetAttachment" = 
+						{
+							m_Name = ""
+						}
+						"m_Data.m_bParentJointRequiresAlignment" = true
+					},
+					{
+						_class = "IKChain"
+						name = "foot_l"
+						children = 
+						[
+							{
+								_class = "IKChainJoint"
+								name = "Bip01_Thigh_L"
+								children = 
+								[
+									{
+										_class = "IKChainJoint"
+										name = "Bip01_Calf_L"
+										children = 
+										[
+											{
+												_class = "IKChainJoint"
+												name = "Bip01_Foot_L"
+												bone = "Bip01_Foot_L"
+											},
+										]
+										bone = "Bip01_Calf_L"
+									},
+								]
+								bone = "Bip01_Thigh_L"
+							},
+						]
+						m_bDoBonesOrientAlongPositiveX = true
+						"m_DefaultSolverSettings.m_nNumIterations" = 6
+						"m_DefaultSolverSettings.m_SolverType " = "IKSOLVER_TwoBone"
+						"m_DefaultTargetSettings.m_Bone" = 
+						{
+							m_Name = "Bip01_Foot_L"
+						}
+						"m_DefaultTargetSettings.m_TargetSource" = "Bone"
+						"m_Data.m_DefaultTargetSettings.m_AnimgraphParameterNamePosition" = 
+						{
+							m_id = 4294967295
+						}
+						"m_Data.m_EndEffectorFixedOffsetAttachment" = 
+						{
+							m_Name = ""
+						}
+						"m_Data.m_bParentJointRequiresAlignment" = true
+					},
+					{
+						_class = "IKChain"
+						name = "lhand"
+						children = 
+						[
+							{
+								_class = "IKChainJoint"
+								name = "Bip01_UpperArm_L"
+								children = 
+								[
+									{
+										_class = "IKChainJoint"
+										name = "Bip01_Forearm_L"
+										children = 
+										[
+											{
+												_class = "IKChainJoint"
+												name = "Bip01_Hand_L"
+												bone = "Bip01_Hand_L"
+											},
+										]
+										bone = "Bip01_Forearm_L"
+									},
+								]
+								bone = "Bip01_UpperArm_L"
+							},
+						]
+						m_bDoBonesOrientAlongPositiveX = true
+						"m_DefaultSolverSettings.m_nNumIterations" = 6
+						"m_DefaultSolverSettings.m_SolverType " = "IKSOLVER_TwoBone"
+						"m_DefaultTargetSettings.m_Bone" = 
+						{
+							m_Name = "Bip01_Hand_L"
+						}
+						"m_DefaultTargetSettings.m_TargetSource" = "Bone"
+						"m_Data.m_DefaultTargetSettings.m_AnimgraphParameterNamePosition" = 
+						{
+							m_id = 4294967295
+						}
+						"m_Data.m_EndEffectorFixedOffsetAttachment" = 
+						{
+							m_Name = ""
+						}
+						"m_Data.m_bParentJointRequiresAlignment" = true
 					},
 				]
 			},
